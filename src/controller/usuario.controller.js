@@ -123,7 +123,7 @@ export const usuarioController = {
 
       if(userFind) {
 
-        const userUpdate = usuarioService.modificarUsuario(body.id, body.nombre)
+        const userUpdate = await usuarioService.modificarUsuario(body.id, body.nombre)
 
         return res.status(200).json({
           message: "Usuario cambiado",
