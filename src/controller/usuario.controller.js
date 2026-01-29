@@ -115,9 +115,11 @@ export const usuarioController = {
 
   async updUser(req, res) {
 
-    const body = req.body
+    try {
 
-    const userFind = await userModel.findOne({_id: body.id})
+      const body = req.body
+
+      const userFind = await userModel.findOne({_id: body.id})
 
       if(userFind) {
 
@@ -133,6 +135,12 @@ export const usuarioController = {
 
           error: "usuario no encontrado"
       })
+    } catch (e) {
+
+      logger.error(`Error ${e.message}`)
+
+      return res.status(500).json({ error: "Error interno del servidor" });
+     }
   },
 
   async updPass(req, res) {
