@@ -117,7 +117,7 @@ export const usuarioController = {
 
     const body = req.body
 
-    const userFind = await userModel.findOne({dni: body.dni})
+    const userFind = await userModel.findOne({id: body.id})
 
       if(userFind) {
 
