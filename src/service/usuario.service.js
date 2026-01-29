@@ -19,9 +19,9 @@ export const usuarioService = {
     return await usuarioDao.readUsuarios()
   },
 
-  async modificarUsuario(id) {
+  async modificarUsuario(id, nombre) {
 
-    return await usuarioDao.updateUsuario(id)
+    return await usuarioDao.updateUsuario(id, nombre)
   },
 
   async eliminarUsuario(id) {

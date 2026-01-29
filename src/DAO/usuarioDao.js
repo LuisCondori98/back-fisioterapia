@@ -13,9 +13,9 @@ export const usuarioDao = {
     return await userModel.find()
   },
 
-  async updateUsuario() {
+  async updateUsuario(id, nombre) {
 
-    return await userModel.updateOne()
+    return await userModel.findOneAndUpdate({id}, {nombre})
   },
 
   async deleteUsuario(id) {

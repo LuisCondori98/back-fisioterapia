@@ -113,6 +113,28 @@ export const usuarioController = {
     }
   },
 
+  async updUser(req, res) {
+
+    const body = req.body
+
+    const userFind = await userModel.findOne({dni: body.dni})
+
+      if(userFind) {
+
+        const userUpdate = usuarioService.modificarUsuario(body.id, body.nombre)
+
+        return res.status(200).json({
+          message: "Usuario cambiado",
+          userUpdate
+        })
+      }
+
+      return res.status(404).json({
+
+          error: "usuario no encontrado"
+      })
+  },
+
   async updPass(req, res) {
 
     try {
