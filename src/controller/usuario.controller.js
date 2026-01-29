@@ -119,6 +119,8 @@ export const usuarioController = {
 
       const body = req.body
 
+      console.log(body)
+
       const userFind = await userModel.findOne({_id: body.id})
 
       if(userFind) {
