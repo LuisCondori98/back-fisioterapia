@@ -15,7 +15,11 @@ export const usuarioDao = {
 
   async updateUsuario(id, data) {
 
-    return await userModel.findOneAndUpdate({_id: id}, {nombre: data.nombre, apellidoPaterno: data.apePaterno})
+    return await userModel.findOneAndUpdate({_id: id}, {
+                                                          nombre: data.nombre,
+                                                          apellidoPaterno: data.apePaterno,
+                                                          apellidoMaterno: data.apeMaterno
+                                                        })
   },
 
   async deleteUsuario(id) {
