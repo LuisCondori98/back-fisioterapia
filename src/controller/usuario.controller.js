@@ -119,13 +119,11 @@ export const usuarioController = {
 
       const body = req.body
 
-      console.log(body)
-
       const userFind = await userModel.findOne({_id: body.id})
 
       if(userFind) {
 
-        const userUpdate = await usuarioService.modificarUsuario(body.id, body.nombre)
+        const userUpdate = await usuarioService.modificarUsuario(body.id, body)
 
         return res.status(200).json({
           message: "Usuario cambiado",
