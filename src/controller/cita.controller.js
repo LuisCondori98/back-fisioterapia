@@ -48,7 +48,7 @@ export const citaController = {
       return res.status(200).json(cita)
     } catch(e) {
 
-      logger.error("Error", err)
+      logger.error("Error", e)
 
       res.status(500).json({ error: "Error al obtener citas" });
     }
@@ -67,7 +67,7 @@ export const citaController = {
       return res.status(200).json(cita)
     } catch(e) {
 
-      logger.error("Error", err)
+      logger.error("Error", e)
 
       res.status(500).json({ error: "Error al obtener citas" });
     }
