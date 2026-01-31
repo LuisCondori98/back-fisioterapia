@@ -14,11 +14,19 @@ export const citaDao = {
         .populate("terapeuta", "nombre apellido especialidad");
   },
 
-  async getCitaById(terapeutaId) {
+  async getCitaByIdFisi(terapeutaId) {
 
     return await citaModel
                         .find({ terapeuta: terapeutaId })
                         .populate("paciente", "nombre apellidoPaterno apellidoMaterno")
-                        .populate("terapeuta", "nombre apellidoPaterno")
+                        .populate("terapeuta", "nombre apellidoPaterno apellidoMaterno")
+  }, 
+
+  async getCitaIdPac(pacienteId) {
+
+    return await citaModel
+                        .find({ paciente: pacienteId })
+                        .populate("paciente", "nombre apellidoPaterno apellidoMaterno")
+                        .populate("terapeuta", "nombre apellidoPaterno apellidoMaterno")
   }
 }

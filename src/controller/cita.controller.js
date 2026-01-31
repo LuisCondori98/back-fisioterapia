@@ -37,13 +37,30 @@ export const citaController = {
     }
   },
 
-  async getCitaById(req, res) {
+  async getCitaByIdTerapeuta(req, res) {
 
     try {
 
       const {id} = req.params
 
-      const cita = await citaService.getCitaId(id)
+      const cita = await citaService.getCitaIdFisio(id)
+
+      return res.status(200).json(cita)
+    } catch(e) {
+
+      logger.error("Error", err)
+
+      res.status(500).json({ error: "Error al obtener citas" });
+    }
+  }, 
+
+  async getCitaByIdPaciente(req, res) {
+
+    try {
+
+      const {id} = req.params
+
+      const cita = await citaService.getCitaIdPacien(id)
 
       return res.status(200).json(cita)
     } catch(e) {

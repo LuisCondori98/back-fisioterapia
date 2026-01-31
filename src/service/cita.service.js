@@ -12,8 +12,13 @@ export const citaService = {
     return await citaDao.leerCita()
   },
   
-  async getCitaId(id) {
+  async getCitaIdFisio(id) {
 
-    return await citaDao.getCitaById(id)
+    return await citaDao.getCitaIdFisi(id)
+  }, 
+
+  async getCitaIdPacien(id) {
+
+    return await citaDao.getCitaIdPac(id)
   }
 }
