@@ -18,7 +18,10 @@ export const usuarioDao = {
     return await userModel.findOneAndUpdate({_id: id}, {
                                                           nombre: data.nombre,
                                                           apellidoPaterno: data.apePaterno,
-                                                          apellidoMaterno: data.apeMaterno
+                                                          apellidoMaterno: data.apeMaterno,
+                                                          celular: data.celular,
+                                                          direccion: data.direccion,
+                                                          correo: data.correo
                                                         })
   },
 
