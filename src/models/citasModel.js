@@ -22,6 +22,10 @@ const citaSchema = new mongoose.Schema({
   motivo: {
     type: String,
   },
+  precio: {
+    type: Number,
+    required: true
+  },
   estado: {
     type: String,
     enum: ["pendiente", "confirmada", "cancelada", "completada"],
