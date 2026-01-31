@@ -5,3 +5,4 @@ export const citaRouter = Router()
 
 citaRouter.post("/", citaController.createCita)
 citaRouter.get("/", citaController.verCitas)
+citaRouter.get("/:id", citaController.getCitaById)

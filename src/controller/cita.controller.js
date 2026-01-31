@@ -28,8 +28,28 @@ export const citaController = {
 
       const citas = await citaService.leerCitas()        
 
-      res.json(citas);
+      res.status(200).json(citas);
     } catch (error) {
+
+      logger.error("Error", err)
+
+      res.status(500).json({ error: "Error al obtener citas" });
+    }
+  },
+
+  async getCitaById(req, res) {
+
+    try {
+
+      const {id} = req.params
+
+      const cita = await citaService.getCitaId(id)
+
+      return res.status(200).json(cita)
+    } catch(e) {
+
+      logger.error("Error", err)
+
       res.status(500).json({ error: "Error al obtener citas" });
     }
   }

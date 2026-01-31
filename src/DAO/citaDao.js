@@ -12,5 +12,10 @@ export const citaDao = {
     return await citaModel.find()
         .populate("paciente", "nombre apellido dni")
         .populate("terapeuta", "nombre apellido especialidad");
+  },
+
+  async getCitaById(id) {
+
+    return await citaModel.find({_id: id})
   }
 }

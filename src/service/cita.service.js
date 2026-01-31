@@ -10,5 +10,10 @@ export const citaService = {
   async leerCitas() {
 
     return await citaDao.leerCita()
+  },
+  
+  async getCitaId(id) {
+
+    return await citaDao.getCitaById(id)
   }
 }

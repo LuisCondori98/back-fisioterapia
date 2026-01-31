@@ -12,5 +12,4 @@ export const connectDB = async () => {
 
     logger.error("Error connect to mongoDB", err)
   }
-  
 }
