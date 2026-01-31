@@ -62,6 +62,8 @@ export const citaController = {
 
       const cita = await citaService.getCitaIdPacien(id)
 
+      logger.info("find by id paciente")
+
       return res.status(200).json(cita)
     } catch(e) {
 
