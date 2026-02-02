@@ -56,9 +56,9 @@ export const verifyToken = (req, res, next) => {
 
 export const isAdmin = (req, res, next) => {
 
-  if (req.user.rol !== "admin") {
+  if (req.user.rol !== "admin" && req.user.cargo !== "gerente") {
 
-    logger.warn("Required role admin")
+    logger.warn("Required role admin and gerente")
 
     return res.status(403).json({ message: "Acceso denegado: se requiere rol administrador" });
   }
