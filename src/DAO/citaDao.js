@@ -17,7 +17,7 @@ export const citaDao = {
   async getCitaByIdFisi(terapeutaId) {
 
     return await citaModel
-                        .find({ terapeuta: terapeutaId })
+                        .findOne({ terapeuta: terapeutaId })
                         .populate("paciente", "nombre apellidoPaterno apellidoMaterno")
                         .populate("terapeuta", "nombre apellidoPaterno apellidoMaterno")
   }, 
@@ -25,7 +25,7 @@ export const citaDao = {
   async getCitaIdPac(pacienteId) {
 
     return await citaModel
-                        .find({ paciente: pacienteId })
+                        .findOne({ paciente: pacienteId })
                         .populate("paciente", "nombre apellidoPaterno apellidoMaterno")
                         .populate("terapeuta", "nombre apellidoPaterno apellidoMaterno")
   }
