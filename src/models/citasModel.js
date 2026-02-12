@@ -24,7 +24,7 @@ const citaSchema = new mongoose.Schema({
   },
   precio: {
     type: Number,
-    required: true
+    default: 60
   },
   estado: {
     type: String,
