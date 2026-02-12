@@ -13,6 +13,8 @@ export const citaController = {
 
       const cita = await citaService.createCita(body)
 
+      logger.info("Generated cita")
+
       return res.status(200).json(cita)
     } catch(err) {
 
