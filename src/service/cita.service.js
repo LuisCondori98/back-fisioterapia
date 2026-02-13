@@ -22,8 +22,8 @@ export const citaService = {
     return await citaDao.getCitaIdPac(id)
   },
   
-  async deleteCitaPaciente(id) {
+  async deleteCita(id) {
 
-    return await citaDao.deleteCitaByIdPaciente(id)
+    return await citaDao.deleteCitaById(id)
   }
 }

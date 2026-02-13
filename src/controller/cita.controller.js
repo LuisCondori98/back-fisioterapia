@@ -75,13 +75,13 @@ export const citaController = {
     }
   },
 
-  async deleteCitaByIdPaciente(req, res) {
+  async deleteCitaById(req, res) {
 
     try {
 
       const {id} = req.params
 
-      const citaDelete = citaService.deleteCitaPaciente(id)
+      const citaDelete = await citaService.deleteCita(id)
 
       logger.info("cita borrada por id de paciente")
 

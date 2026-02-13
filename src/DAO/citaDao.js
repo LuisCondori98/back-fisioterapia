@@ -30,8 +30,8 @@ export const citaDao = {
                         .populate("terapeuta", "nombre apellidoPaterno apellidoMaterno")
   }, 
 
-  async deleteCitaByIdPaciente(pacienteId) {
+  async deleteCitaById(citaId) {
 
-    return await citaModel.findByIdAndDelete({paciente: pacienteId})
+    return await citaModel.findByIdAndDelete(citaId)
   }
 }
