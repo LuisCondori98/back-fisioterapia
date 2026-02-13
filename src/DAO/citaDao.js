@@ -28,7 +28,12 @@ export const citaDao = {
                         .find({ paciente: pacienteId })
                         .populate("paciente", "nombre apellidoPaterno apellidoMaterno")
                         .populate("terapeuta", "nombre apellidoPaterno apellidoMaterno")
-  }, 
+  },
+
+  async updateCitaById(citaId, data) {
+
+    return await citaModel.updateOne({_id: citaId}, {$set: data})
+  },
 
   async deleteCitaById(citaId) {
 

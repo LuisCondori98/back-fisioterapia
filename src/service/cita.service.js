@@ -21,6 +21,11 @@ export const citaService = {
 
     return await citaDao.getCitaIdPac(id)
   },
+
+  async updateCita(id, data) {
+
+    return await citaDao.updateCitaById(id, data)
+  },
   
   async deleteCita(id) {
 

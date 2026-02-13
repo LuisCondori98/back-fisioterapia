@@ -75,6 +75,26 @@ export const citaController = {
     }
   },
 
+  async updateCita(req, res) {
+
+    try {
+
+      const {id} = req.params
+      const body = req.body
+
+      const updateCita = await citaService.updateCita(id, body)
+
+      logger.info("Cita actualizada a confirmada")
+
+      return res.status(200).json({mssg: "Actualizado correctamente", data: updateCita})
+    } catch(e) {
+
+      logger.error("Error", e)
+
+      res.status(500).json({ error: "Error al actualizar la cita" });
+    }
+  },
+
   async deleteCitaById(req, res) {
 
     try {
