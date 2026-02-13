@@ -52,7 +52,7 @@ export const usuarioController = {
 
       if(name && name.trim() !== "") {
 
-        const user = await usuarioService.getByNombre(name)
+        const user = await usuarioService.getByNombre(name.toUpperCase())
 
         return res.status(200).json(user)
       }
