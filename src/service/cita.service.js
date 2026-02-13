@@ -22,7 +22,7 @@ export const citaService = {
     return await citaDao.getCitaIdPac(id)
   },
 
-  async updateCita(id, data) {
+  async updateCitaId(id, data) {
 
     return await citaDao.updateCitaById(id, data)
   },

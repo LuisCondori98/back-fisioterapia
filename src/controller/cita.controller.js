@@ -81,8 +81,9 @@ export const citaController = {
 
       const {id} = req.params
       const body = req.body
+      console.log(body)
 
-      const updateCita = await citaService.updateCita(id, body)
+      const updateCita = await citaService.updateCitaId(id, body)
 
       logger.info("Cita actualizada a confirmada")
 
