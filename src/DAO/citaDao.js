@@ -14,7 +14,7 @@ export const citaDao = {
         .populate("terapeuta", "nombre apellido especialidad");
   },
 
-  async getCitaByIdFisi(terapeutaId) {
+  async getCitaIdFisi(terapeutaId) {
 
     return await citaModel
                         .find({ terapeuta: terapeutaId })
