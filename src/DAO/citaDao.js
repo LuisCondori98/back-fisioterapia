@@ -32,7 +32,7 @@ export const citaDao = {
 
   async updateCitaById(citaId, data) {
 
-    return await citaModel.findByIdAndUpdate({_id: citaId}, {estado: data})
+    return await citaModel.findByIdAndUpdate({_id: citaId}, {$set: data})
   },
 
   async deleteCitaById(citaId) {
