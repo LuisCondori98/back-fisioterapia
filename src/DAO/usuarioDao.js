@@ -52,6 +52,6 @@ export const usuarioDao = {
 
   async byNombre(nombre) {
 
-    return await userModel.findOne({nombre: nombre})
+    return await userModel.find({nombre: { $regex: `^${nombre}`, $options: "i"}})
   }
 }
