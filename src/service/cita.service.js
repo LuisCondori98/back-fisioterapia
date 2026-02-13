@@ -20,5 +20,10 @@ export const citaService = {
   async getCitaIdPacien(id) {
 
     return await citaDao.getCitaIdPac(id)
+  },
+  
+  async deleteCitaPaciente(id) {
+
+    return await citaDao.deleteCitaByIdPaciente(id)
   }
 }

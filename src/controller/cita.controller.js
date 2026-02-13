@@ -73,5 +73,24 @@ export const citaController = {
 
       res.status(500).json({ error: "Error al obtener citas" });
     }
+  },
+
+  async deleteCitaByIdPaciente(req, res) {
+
+    try {
+
+      const {id} = req.params
+
+      const citaDelete = citaService.deleteCitaPaciente(id)
+
+      logger.info("cita borrada por id de paciente")
+
+      return res.status(200).json({messg: "cita eliminada por id de paciente", cita: citaDelete})
+    } catch(err) {
+
+      logger.error("Error", err)
+
+      res.status(500).json({ error: "Error al borrar cita por id de paciente" });
+    }
   }
 }
