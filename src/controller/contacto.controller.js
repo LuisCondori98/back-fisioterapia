@@ -14,7 +14,7 @@ export const contactoController = {
       return res.status(200).json(contactoMssg)
     } catch(err) {
 
-      logger.error("[ContactoController] Create error " + err.message )
+      logger.error("[ContactoController] Create contact error " + err.message )
 
       console.log(err.message)
     }
@@ -29,7 +29,7 @@ export const contactoController = {
       return res.status(200).json(contactoMssgs)
     } catch(err) {
 
-      logger.error("[ContactoController] Read error " + err.message )
+      logger.error("[ContactoController] Read contacts error " + err.message )
 
       console.log(err.message)
     }
