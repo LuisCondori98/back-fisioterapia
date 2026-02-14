@@ -10,20 +10,16 @@ export const citaController = {
 
       const body = req.body
 
-      console.log(body)
-
       const cita = await citaService.createCita(body)
-
-      console.log(cita)
 
       logger.info("Generated cita")
 
       await sendEmail("lcondori11@hotmail.com",
                 "cita confirmada",
                 `
-                  <h2>Hola Admin el paciente ${body.paciente.nombre}
-                  tiene cita con el terapeuta ${body.terapeuta.nombre} el ${body.fecha}
-                  a las ${body.hora} falta confirmar pago por ${body.precio}</h2>
+                  <h2>Hola Admin el paciente ${cita.paciente.nombre}
+                  tiene cita con el terapeuta ${cita.terapeuta.nombre} el ${cita.fecha}
+                  a las ${cita.hora} falta confirmar pago por ${cita.precio}</h2>
                 `
                 )
 
