@@ -4,9 +4,9 @@ export const citaDao = {
 
   async createCita(data) {
 
-    await citaModel.create(data)
+    const cita = await citaModel.create(data)
 
-    const citaCreated = await citaModel.findById(data._id)
+    const citaCreated = await citaModel.findById(cita._id)
                               .populate("paciente")
                               .populate("terapeuta")
     return citaCreated
