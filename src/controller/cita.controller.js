@@ -10,9 +10,11 @@ export const citaController = {
 
       const body = req.body
 
-      console.log(body.paciente.nombre)
+      console.log(body)
 
       const cita = await citaService.createCita(body)
+
+      console.log(cita)
 
       logger.info("Generated cita")
 
