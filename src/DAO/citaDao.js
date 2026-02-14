@@ -6,7 +6,7 @@ export const citaDao = {
 
     await citaModel.create(data)
 
-    const citaCreated = await citaModel.getCitaById(data._id)
+    const citaCreated = await citaModel.findById(data._id)
                               .populate("paciente")
                               .populate("terapeuta")
     return citaCreated
@@ -17,11 +17,6 @@ export const citaDao = {
     return await citaModel.find()
         .populate("paciente", "nombre apellido dni")
         .populate("terapeuta", "nombre apellido especialidad");
-  },
-
-  async getCitaById(id) {
-
-    return await citaModel.findOne({_id: id})
   },
 
   async getCitaIdFisi(terapeutaId) {
