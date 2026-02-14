@@ -10,7 +10,7 @@ export const citaController = {
 
       const body = req.body
 
-      console.log(body)
+      console.log(body.paciente.nombre)
 
       const cita = await citaService.createCita(body)
 
