@@ -16,7 +16,7 @@ export const citaController = {
 
       logger.info("Generated cita")
 
-      sendEmail("lcondori11@hotmail.com",
+      await sendEmail("lcondori11@hotmail.com",
                 "cita confirmada",
                 `<h2>Hola Admin el paciente ${body.paciente} tiene cita con el terapeuta ${body.terapeuta} el ${body.fecha} a las ${body.hora} falta confirmar pago </h2>`)
 
