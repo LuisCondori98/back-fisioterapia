@@ -20,7 +20,12 @@ export const citaController = {
 
       await sendEmail("lcondori11@hotmail.com",
                 "cita confirmada",
-                `<h2>Hola Admin el paciente ${body.paciente} tiene cita con el terapeuta ${body.terapeuta} el ${body.fecha} a las ${body.hora} falta confirmar pago </h2>`)
+                `
+                  <h2>Hola Admin el paciente ${body.paciente.nombre}
+                  tiene cita con el terapeuta ${body.terapeuta.nombre} el ${body.fecha}
+                  a las ${body.hora} falta confirmar pago por ${body.precio}</h2>
+                `
+                )
 
       return res.status(200).json(cita)
     } catch(err) {
