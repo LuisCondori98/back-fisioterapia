@@ -1,5 +1,6 @@
 import logger from "../logger.js"
 import { citaService } from "../service/cita.service.js"
+import { sendEmail } from "../service/email.service.js"
 
 export const citaController = {
 
@@ -14,6 +15,10 @@ export const citaController = {
       const cita = await citaService.createCita(body)
 
       logger.info("Generated cita")
+
+      sendEmail("lcondori11@hotmail.com",
+                "cita confirmada",
+                `<h2>Hola Admin el paciente ${body.paciente} tiene cita con el terapeuta ${body.terapeuta} el ${body.fecha} a las ${body.hora} falta confirmar pago </h2>`)
 
       return res.status(200).json(cita)
     } catch(err) {
