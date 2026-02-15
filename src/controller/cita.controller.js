@@ -48,7 +48,7 @@ export const citaController = {
                                 </tr>
                                 <tr>
                                   <td style="background: #f8f9fa; font-weight: bold;">Fecha:</td>
-                                  <td>${cita.fecha}</td>
+                                  <td>${new Date(cita.fecha).toLocaleDateString()}</td>
                                 </tr>
                                 <tr>
                                   <td style="background: #f8f9fa; font-weight: bold;">Hora:</td>
