@@ -14,7 +14,7 @@ export const citaController = {
 
       logger.info("Generated cita")
 
-      await sendEmail(cita.terapeuta.correo,
+      await sendEmail(`${cita.terapeuta.correo}`,
                       "Cita Confirmada - Centro de Fisioterapia",
                       `
                       <div style="font-family: Arial, sans-serif; background-color: #f4f6f9; padding: 20px;">
