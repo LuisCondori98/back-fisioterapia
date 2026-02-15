@@ -15,7 +15,10 @@ export const citaController = {
       logger.info("Generated cita")
 
       await sendEmail(
-                      "lcondori11@hotmail.com",
+                      [
+                        "lcondori11@hotmail.com",
+                        cita.terapeuta.correo
+                      ],
                       "Cita Confirmada - Centro de Fisioterapia",
                       `
                       <div style="font-family: Arial, sans-serif; background-color: #f4f6f9; padding: 20px;">
@@ -31,7 +34,7 @@ export const citaController = {
 
                           <tr>
                             <td style="padding: 25px;">
-                              <p style="font-size: 16px;">Hola <strong>Administrador</strong>,</p>
+                              <p style="font-size: 16px;">Hola <strong>Administrador y terapeuta</strong>,</p>
                               
                               <p style="font-size: 15px; color: #555;">
                                 Se ha registrado una nueva cita con los siguientes detalles:

@@ -5,4 +5,4 @@ import { isAdmin } from "../helpers/jwt.js";
 export const contactoRouter = Router()
 
 contactoRouter.post("/", contactoController.crearContacto)
-contactoRouter.get("/", isAdmin, contactoController.leerContactos)
+contactoRouter.get("/", contactoController.leerContactos)
