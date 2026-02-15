@@ -6,7 +6,7 @@ export const sendEmail = async (to, subject, html) => {
 
     return await resend.emails.send({
         from: "Centro Fisioterapia Vivir en movimiento <vivirenmovimiento@resend.dev>",
-        to,
+        to: to,
         subject,
         html
     })
