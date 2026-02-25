@@ -52,8 +52,6 @@ export const authController = {
 
       const { uid, email, displayName, photoURL } = decodedToken;
 
-      console.log(token)
-
       let user = await userModel.findOne({ firebaseUID: uid });
 
       if (!user) {
@@ -67,6 +65,8 @@ export const authController = {
         process.env.JWT_SECRET,
         { expiresIn: '7d' }
       );
+
+      console.log(token)
 
       res.json({ token });
     } catch (error) {
