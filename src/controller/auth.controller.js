@@ -2,7 +2,7 @@ import { generateToken } from "../helpers/jwt.js";
 import logger from "../logger.js";
 import { userModel } from "../models/usuarioModel.js";
 import { validatePassword } from "../utils/bcrypt.js";
-import admin from "../firebaseAdmin.js"
+import admin from "../config/serviceAccountKey.js"
 
 export const authController = {
 
@@ -50,6 +50,8 @@ export const authController = {
       const decodedToken = await admin.auth().verifyIdToken(idToken);
 
       const { uid, email, displayName, photoURL } = decodedToken;
+
+      console.log(decodedToken)
 
       let user = await userModel.findOne({ firebaseUID: uid });
 
