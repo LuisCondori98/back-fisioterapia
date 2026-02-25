@@ -52,7 +52,7 @@ export const authController = {
 
       const { uid, email, displayName, photoURL } = decodedToken;
 
-      console.log(decodedToken)
+      console.log(token)
 
       let user = await userModel.findOne({ firebaseUID: uid });
 
