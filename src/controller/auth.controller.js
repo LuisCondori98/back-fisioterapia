@@ -2,7 +2,8 @@ import { generateToken } from "../helpers/jwt.js";
 import logger from "../logger.js";
 import { userModel } from "../models/usuarioModel.js";
 import { validatePassword } from "../utils/bcrypt.js";
-import admin from "../config/serviceAccountKey.js"
+import admin from "../config/firebaseAdmin.js"
+import jwt from "jsonwebtoken"
 
 export const authController = {
 
@@ -41,7 +42,7 @@ export const authController = {
     }
   },
   
-  async loginGoogle() {
+  async loginGoogle(req, res) {
 
     const { idToken } = req.body;
 
