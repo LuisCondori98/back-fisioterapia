@@ -56,7 +56,7 @@ export const authController = {
 
       if (!user) {
 
-        user = await userModel.create({ firebaseUID: uid, email, name: displayName, photo: photoURL });
+        user = await userModel.create({ firebaseUID: uid, email, name: displayName, photo: photoURL, password: "as8CA5s8", dni: "77777777" });
       }
 
       // Generar tu JWT
